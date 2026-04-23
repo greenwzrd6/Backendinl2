@@ -42,6 +42,14 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao {
 
     private void createTables() {
         this.template.update("""
+                DROP TABLE IF EXISTS Calls
+                """);
+                
+        this.template.update("""
+                DROP TABLE IF EXISTS Customers
+                """);
+
+        this.template.update("""
                 CREATE TABLE IF NOT EXISTS Customers(
                     customer_id VARCHAR(7) PRIMARY KEY,
                     company_name VARCHAR(50) NOT NULL,

@@ -65,11 +65,11 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 		// First find the customer
 		if (findCustomerById(customerId) != null) {
 			Customer customer = findCustomerById(customerId);
+			// Call the addCall on the customer
 			customer.addCall(callDetails);
 		} else {
 			throw new CustomerNotFoundException();
 		}
-		// Call the addCall on the customer
 	}
 
 }

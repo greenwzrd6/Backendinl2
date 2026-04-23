@@ -17,7 +17,6 @@ public class Call {
 	}
 
 	public Call(String notes, Date timestamp) {
-		// this defaults to a timestamp of "now"
 		this.timeAndDate = timestamp;
 		this.notes = notes;
 	}

@@ -12,7 +12,6 @@ import se.yrgo.domain.Call;
 import se.yrgo.domain.Customer;
 import se.yrgo.services.calls.CallHandlingService;
 import se.yrgo.services.customers.CustomerManagementService;
-import se.yrgo.services.customers.CustomerNotFoundException;
 import se.yrgo.services.diary.DiaryManagementService;
 
 public class SimpleClient {
@@ -39,8 +38,8 @@ public class SimpleClient {
 
             try {
                 callService.recordCall("CS03939", newCall, actions);
-            } catch (CustomerNotFoundException e) {
-                System.out.println("That customer doesn't exist");
+            } catch (Exception e) {
+                System.err.println("ERROR: " + e);
             }
 
             System.out.println("Here are the outstanding actions:");
